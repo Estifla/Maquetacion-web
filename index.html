@@ -6,6 +6,22 @@
 
     <!-- Css -->
     <link rel="stylesheet" href="assets/css/styles.css">
+
+    <script type="text/javascript">
+        window.addEventListener("load", function(){
+            var template = document.getElementById("article-template");
+
+            var articles = document.getElementById("articles"); 
+            for(var i = 1; i <= 5; i++){
+                var clonado = template.cloneNode(true);
+                clonado.removeAttribute("id");
+                var h2 = clonado.getElementsByTagName("h2")[0];
+                h2.innerHTML = h2.textContent + " " + i;
+                articles.appendChild(clonado)
+            }
+        } );
+          
+        </script>
 </head>
     <body>
     <header id="header">
@@ -49,13 +65,33 @@
 </div>
 <div class="center">
     <section id="content">
-    <h3>Últimos Articulos </h3>  <!-- Listado articulos -->
+    <h3 class="subheader">Últimos Articulos </h3> 
+    
+    <!-- Listado articulos -->
+
+    <div id="articles">
+        
+        <article class="article-item" id="article-template">
+        <div class="image-wrap">
+            <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="Tokio">
+        </div>
+        <h2> Ejemplo de articulo</h2>
+        <span class="date">
+            Hace 5 minutos
+        </span>
+        <a href="#">Leer más</a>
+        <div class="clearfix"></div>
+    </article>
+    <!-- Añadir articulos via js -->
+
+    </div>
+
     </section>
 
     <aside id="sidebar" >
         <div id="nav-blog" class="sidebar-item">
           <h3>Puedes hacer esto</h3>
-          <a href="#">Crear articulo</a> 
+          <a href="#" class="btn btn-success">Crear articulo</a> 
         </div>
 
         <div id="nav-blog" class="sidebar-item">
@@ -63,9 +99,10 @@
             <p>Encuentra el articulo que buscas</p>
             <form action="">
                 <input type="text" name="search" id="">
-                <input type="submit" name="submit" vvalue="Buscar" id="">
+                <input type="submit" name="submit" vvalue="Buscar" id="" class="btn">
+
             </form>
-             
+                         
           </div>
     </aside>
 
