@@ -331,3 +331,44 @@ textarea{
     margin-bottom: 0px;
     border: none;
 }
+
+
+/*  Responsive (identificar puntos de corte) */
+
+/* desde el pixel 0 hasta el 1488 de pantalla */
+
+@media (max-width: 1488px){
+    /* se ejecutaran los siguientes estilos */
+    .center{
+        width: 85%;
+    }
+}
+
+@media (max-width: 1314px){
+    /* se ejecutaran los siguientes estilos */
+    .center{
+        width: 95%;
+    }
+    #menu ul{
+        width: auto;
+    }
+}
+
+@media (max-width: 797px){
+    /* se ejecutaran los siguientes estilos */
+    #logo{
+        float: none;
+        width: 240px;
+        margin: 0px auto;
+    }
+
+    #menu,
+    #menu ul{
+        clear: none;
+        float: none;
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        line-height: 43px;
+    }
+}
